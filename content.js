@@ -137,7 +137,7 @@ function handleOpenAIClick() {
         headers: {
           "Content-Type": "application/json",
           Authorization:
-            "Bearer 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",
+            "Bearer ", // add openai key here
         },
         body: JSON.stringify({
           model: "text-davinci-003",
