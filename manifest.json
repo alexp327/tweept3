@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "TweeGPT3",
+  "description": "This extension adds OpenAI right into the Tweet editor!",
+  "version": "1.0.0",
+  "author": "Will Hobick & Alex Perry",
+  "background": {
+    "service_worker": 
+      "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://extensionpay.com/*"
+      ],
+      "js": [
+        "ExtPay.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://twitter.com/*"
+      ],
+      "js": [
+        "ExtPay.js",
+        "content.js"
+      ]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage"
+  ],
+  "icons": {
+    "128": "openAILogo.png"
+  },
+  "web_accessible_resources": [
+    {
+    "resources": ["OpenAISVG.svg"],
+      "matches": [ "https://twitter.com/*" ]
+}
+]
+}
